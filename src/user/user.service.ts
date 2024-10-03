@@ -22,6 +22,7 @@ export class UserService {
     @Inject(WINSTON_MODULE_PROVIDER) private logger: Logger,
     private prismaService: PrismaService,
   ) {}
+  
   async register(request: RegisterUserRequest): Promise<UserResponse> {
     this.logger.debug(`Register New User ${JSON.stringify(request)}`);
     const registerRequest: RegisterUserRequest =
